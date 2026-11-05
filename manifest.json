@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "QuoteBox - 文字图片收藏盒",
+  "version": "1.0.0",
+  "description": "选中网页中的文字和图片，一键保存为卡片形式，支持格式保留、导入导出。",
+  
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "QuoteBox 收藏盒"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["manager.html", "db.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

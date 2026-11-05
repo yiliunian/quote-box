@@ -1,0 +1,13 @@
+# 打包产物（如后续生成 crx/zip）
+*.crx
+*.pem
+*.zip
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 本地调试
+*.log
